@@ -104,7 +104,7 @@ You'll be asked for your account password when using `sudo` — that's normal, i
 
 You don't need to know Git for this. The easiest way:
 
-1. Go to **https://github.com/wtaulu/pyrom-manager** in your browser.
+1. Go to **https://github.com/WaxTools/pyrom-manager** in your browser.
 2. Click the green **"Code"** button.
 3. Click **"Download ZIP"**.
 4. Find the downloaded file in your **Downloads** folder (something like `pyrom-manager-master.zip`) and extract it:
@@ -112,7 +112,7 @@ You don't need to know Git for this. The easiest way:
    - **Linux:** right-click the ZIP file and choose "Extract Here", or in the terminal: `cd ~/Downloads && unzip pyrom-manager-master.zip`.
 5. You'll end up with a folder named something like `pyrom-manager-master`. Move it somewhere you'll remember, e.g. your Home folder or Documents. You can rename it to `pyrom-manager` if you like.
 
-> **Prefer using Git instead?** If Git is installed (`git --version` to check), you can instead run `git clone https://github.com/wtaulu/pyrom-manager.git` — this makes it easier to pull future updates. Either method works equally well for running the app.
+> **Prefer using Git instead?** If Git is installed (`git --version` to check), you can instead run `git clone https://github.com/WaxTools/pyrom-manager.git` — this makes it easier to pull future updates. Either method works equally well for running the app.
 
 ---
 
@@ -239,7 +239,7 @@ On modern macOS, the command is `python3`, not `python`, unless you've set up an
 Something else is already using port 8000 (maybe another copy of this app is already running in another terminal window). Find and close it, or restart your computer, then try again.
 
 ### Still stuck?
-Open an issue at **https://github.com/wtaulu/pyrom-manager/issues** with:
+Open an issue at **https://github.com/WaxTools/pyrom-manager/issues** with:
 - The exact command you ran
 - The exact error text (copy/paste it, don't paraphrase)
 - Your OS/distribution and Python version (`python3 --version`)

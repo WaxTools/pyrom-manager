@@ -1,7 +1,7 @@
 # PYRom Manager
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Latest Release](https://img.shields.io/github/v/release/wtaulu/pyrom-manager)](https://github.com/wtaulu/pyrom-manager/releases)
+[![Latest Release](https://img.shields.io/github/v/release/WaxTools/pyrom-manager)](https://github.com/WaxTools/pyrom-manager/releases)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](docs/INSTALL_WINDOWS.md)
 [![Issues welcome](https://img.shields.io/badge/issues-welcome-brightgreen.svg)](../../issues)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
@@ -72,7 +72,7 @@ The short version, if you're already comfortable with a terminal:
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/wtaulu/pyrom-manager.git
+git clone https://github.com/WaxTools/pyrom-manager.git
 cd pyrom-manager
 
 # 2. Create and activate a virtual environment

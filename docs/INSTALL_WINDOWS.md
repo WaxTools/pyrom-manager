@@ -66,14 +66,14 @@ Keep this PowerShell window open, or just remember how to reopen it — you'll u
 
 You don't need to know Git for this. The easiest way:
 
-1. Go to **https://github.com/wtaulu/pyrom-manager** in your browser.
+1. Go to **https://github.com/WaxTools/pyrom-manager** in your browser.
 2. Click the green **"Code"** button.
 3. Click **"Download ZIP"**.
 4. Once it's downloaded (check your **Downloads** folder for `pyrom-manager-master.zip` or similar), **right-click** the ZIP file and choose **"Extract All..."**.
 5. Choose a location you'll remember — for example, extract it directly to your `Documents` folder, or to `C:\`. Avoid extracting into folders with unusual characters or very long paths.
 6. After extracting, you'll have a folder named something like `pyrom-manager-master`. You can rename it to just `pyrom-manager` if you like (right-click → Rename). **Remember the full path to this folder** — you'll need it in the next step. For example: `C:\Users\YourName\Documents\pyrom-manager`.
 
-> **Prefer using Git instead?** If you're comfortable installing [Git for Windows](https://git-scm.com/download/win), you can instead run `git clone https://github.com/wtaulu/pyrom-manager.git` in PowerShell — this makes it easier to pull future updates. Either method works equally well for running the app.
+> **Prefer using Git instead?** If you're comfortable installing [Git for Windows](https://git-scm.com/download/win), you can instead run `git clone https://github.com/WaxTools/pyrom-manager.git` in PowerShell — this makes it easier to pull future updates. Either method works equally well for running the app.
 
 ---
 
@@ -212,7 +212,7 @@ This usually means an error happened too fast to read. Instead, open PowerShell 
 Some ZIP extractors create `pyrom-manager-master\pyrom-manager-master\...`. Make sure you `cd`/navigate into the folder that directly contains `romtools.py`, not one level above it.
 
 ### Still stuck?
-Open an issue at **https://github.com/wtaulu/pyrom-manager/issues** with:
+Open an issue at **https://github.com/WaxTools/pyrom-manager/issues** with:
 - The exact command you ran
 - The exact error text (copy/paste it, don't paraphrase)
 - Your Windows version and Python version (`python --version`)
