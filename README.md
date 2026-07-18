@@ -141,7 +141,7 @@ pyrom-manager/
 │   └── base.html        # Single-page UI (tabs, JS, styles)
 ├── requirements.txt      # Python dependencies
 ├── run.bat               # Windows launcher
-├── AUDIT_LOG.md          # Development history / session log
+├── CHANGELOG.md          # Release history
 ├── config.json           # Local settings (gitignored, created automatically)
 ├── cache/                # SQLite hash/verify cache (gitignored, created automatically)
 ├── DatRoot/               # Your DAT files + folder mappings (gitignored, user-provided)

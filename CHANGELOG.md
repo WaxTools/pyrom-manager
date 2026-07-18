@@ -3,7 +3,7 @@
 All notable changes to this project are documented here.
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
-## [Unreleased]
+## [1.0.0] - 2026-07-18
 
 ### Added
 - Initial public release: ROM File List (hashing), Media Cleaner, DAT Manager (Catalogue / Coverage / ROM Scanner), Duplicates cleaner, Game Manager, Collection Compare, and Utilities tabs.
