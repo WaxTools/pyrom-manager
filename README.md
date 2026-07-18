@@ -1,5 +1,11 @@
 # PYRom Manager
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Latest Release](https://img.shields.io/github/v/release/wtaulu/pyrom-manager)](https://github.com/wtaulu/pyrom-manager/releases)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](docs/INSTALL_WINDOWS.md)
+[![Issues welcome](https://img.shields.io/badge/issues-welcome-brightgreen.svg)](../../issues)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
 A self-hosted, browser-based toolkit for organizing, verifying, and cleaning up large retro-gaming ROM collections (Recalbox, RetroBat, EmulationStation-style layouts). Built with FastAPI + vanilla JS, running entirely on your own machine against your own files.
 
 > **⚠️ This app modifies, renames, and deletes files on disk.** Read the [Disclaimer](#-disclaimer) before you point it at anything you can't afford to lose.
@@ -177,6 +183,7 @@ Ways to help make this a better app:
 
 - 🐛 **Found a bug?** [Open an issue](../../issues/new?template=bug_report.md) with what you did and what happened.
 - 💡 **Have an idea?** [Open a feature request](../../issues/new?template=feature_request.md).
+- 💬 **Just want to chat, ask a question, or share your setup?** Use [Discussions](../../discussions) — no need for a formal issue.
 - ✅ **It worked for you?** Even a quick issue or discussion post saying "tested on X, works fine" genuinely helps others trust the tool on their own setup.
 - 🔧 **Want to fix/build something yourself?** See [CONTRIBUTING.md](CONTRIBUTING.md) for how to submit a pull request.
 
