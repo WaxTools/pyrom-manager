@@ -9,6 +9,9 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 - App now opens the default browser automatically to `http://localhost:8000` a moment after startup.
 - In-app update notification: a dismissible banner shows when a newer GitHub release is available (checked against `VERSION`, cached 6h, fails silently if offline). No auto-update — see [docs/UPDATING.md](docs/UPDATING.md) for manual update steps.
 
+### Fixed
+- Game Manager's "Adult" column was always empty for RetroBat collections, since RetroBat's scraper has no `<adult>` gamelist tag at all (it's Recalbox-only) — it flags mature content via `<genre>Adults</genre>` instead. The Adult column now also picks that up.
+
 ## [1.0.0] - 2026-07-18
 
 ### Added
