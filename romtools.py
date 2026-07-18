@@ -27,6 +27,7 @@ import struct
 import subprocess
 import tempfile
 import threading
+import webbrowser
 from datetime import datetime
 from xml.sax.saxutils import escape, unescape
 import xml.etree.ElementTree as ET
@@ -3344,4 +3345,5 @@ async def compare_delete(
 # ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
+    threading.Timer(1.5, lambda: webbrowser.open("http://localhost:8000")).start()
     uvicorn.run("romtools:app", host="0.0.0.0", port=8000, reload=True)
