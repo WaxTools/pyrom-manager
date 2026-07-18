@@ -25,7 +25,7 @@ Where a command differs between macOS and Linux, both are shown.
 
 ## 1. What you're about to do
 
-PYRom Manager is a **Python program** that runs a small local web server on your own computer, which you then open in your web browser (like Safari, Chrome, or Firefox) at an address like `http://localhost:8000`. Nothing gets uploaded to the internet — it all stays on your machine.
+PYRom Manager is a **Python program** that runs a small local web server on your own computer. When it starts, it automatically opens your default web browser to `http://localhost:8000`. Nothing gets uploaded to the internet — it all stays on your machine.
 
 To get there, you'll:
 - Install **Python**, if you don't already have a recent enough version.
@@ -188,13 +188,7 @@ Uvicorn running on http://0.0.0.0:8000
 
 This means it's working! **Leave this terminal window open** — closing it stops the app.
 
-Now open your web browser and go to:
-
-```
-http://localhost:8000
-```
-
-You should see the PYRom Manager interface.
+A browser tab should open **automatically** a second or two later, pointed at `http://localhost:8000`, showing the PYRom Manager interface. If it doesn't open on its own, just open your browser and type that address in yourself.
 
 ---
 
@@ -209,7 +203,7 @@ You should see the PYRom Manager interface.
      source venv/bin/activate
      python romtools.py
      ```
-  4. Open `http://localhost:8000` in your browser again.
+  4. Your browser should open automatically to `http://localhost:8000` — if not, open it yourself.
 
 ---
 

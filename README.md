@@ -102,7 +102,7 @@ source venv/bin/activate
 python romtools.py
 ```
 
-Then open **http://localhost:8000** in your browser.
+Your default browser should open automatically to **http://localhost:8000** a moment after the server starts. If it doesn't (e.g. running headless, or via `uvicorn` directly), just open that address yourself.
 
 You can also run it directly with uvicorn (useful for auto-reload during development):
 

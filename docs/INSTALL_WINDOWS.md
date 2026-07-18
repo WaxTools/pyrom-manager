@@ -22,7 +22,7 @@ If you get stuck, see the [Troubleshooting](#troubleshooting) section at the bot
 
 ## 1. What you're about to do
 
-PYRom Manager is a **Python program** that runs a small local web server on your own PC, which you then open in your web browser (like Chrome or Edge) at an address like `http://localhost:8000`. Nothing gets uploaded to the internet — it all stays on your machine.
+PYRom Manager is a **Python program** that runs a small local web server on your own PC. When it starts, it automatically opens your default web browser to `http://localhost:8000`. Nothing gets uploaded to the internet — it all stays on your machine.
 
 To get there, you'll:
 - Install **Python** (the language the app is written in), if you don't already have it.
@@ -152,13 +152,7 @@ Uvicorn running on http://0.0.0.0:8000
 
 This means it's working! **Leave this PowerShell window open** — closing it stops the app.
 
-Now open your web browser (Chrome, Edge, Firefox, whatever you normally use) and go to:
-
-```
-http://localhost:8000
-```
-
-You should see the PYRom Manager interface.
+A browser tab should open **automatically** a second or two later, pointed at `http://localhost:8000`, showing the PYRom Manager interface. If it doesn't open on its own, just open your browser and type that address in yourself.
 
 > **Tip:** Once it's set up, you can also just double-click **`run.bat`** inside the project folder to start the app — it does steps 5-7 for you automatically (activating the environment and launching). You'll still need to have done steps 5-6 at least once first.
 
@@ -174,7 +168,7 @@ You should see the PYRom Manager interface.
      venv\Scripts\activate
      python romtools.py
      ```
-  3. Open `http://localhost:8000` in your browser again.
+  3. Your browser should open automatically to `http://localhost:8000` — if not, open it yourself.
 
 ---
 
