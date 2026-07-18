@@ -27,6 +27,9 @@ import struct
 import subprocess
 import tempfile
 import threading
+import time
+import urllib.error
+import urllib.request
 import webbrowser
 from datetime import datetime
 from xml.sax.saxutils import escape, unescape
@@ -580,6 +583,60 @@ async def post_verify_cache_lookup(
             out[folder] = {"status": "stale", "hash_type": hash_type, "result": None, "updated_at": updated_at}
 
     return JSONResponse({"folders": out})
+
+
+# ---------------------------------------------------------------------------
+# Routes - API: Update check
+# ---------------------------------------------------------------------------
+GITHUB_REPO       = "WaxTools/pyrom-manager"
+APP_VERSION       = (Path(__file__).parent / "VERSION").read_text(encoding="utf-8").strip() \
+                     if (Path(__file__).parent / "VERSION").exists() else "0.0.0"
+_update_check_cache: dict = {}
+_UPDATE_CHECK_TTL = 6 * 3600  # don't hit the GitHub API more than once per 6h
+
+
+def _parse_version(v: str) -> tuple:
+    parts = v.lstrip("vV").split(".")
+    out = []
+    for p in parts:
+        try:
+            out.append(int(p))
+        except ValueError:
+            break
+    return tuple(out) or (0,)
+
+
+@app.get("/api/update-check")
+async def update_check():
+    now = time.time()
+    if _update_check_cache and now - _update_check_cache.get("checked_at", 0) < _UPDATE_CHECK_TTL:
+        return JSONResponse(_update_check_cache["result"])
+
+    result = {
+        "current":          APP_VERSION,
+        "latest":            None,
+        "update_available": False,
+        "release_url":       f"https://github.com/{GITHUB_REPO}/releases/latest",
+        "checked":           False,
+    }
+    try:
+        req = urllib.request.Request(
+            f"https://api.github.com/repos/{GITHUB_REPO}/releases/latest",
+            headers={"Accept": "application/vnd.github+json", "User-Agent": "PYRom-Manager"},
+        )
+        with urllib.request.urlopen(req, timeout=4) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+        latest = data.get("tag_name", "")
+        result["latest"]      = latest
+        result["release_url"] = data.get("html_url", result["release_url"])
+        result["update_available"] = _parse_version(latest) > _parse_version(APP_VERSION)
+        result["checked"] = True
+    except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, ValueError, OSError):
+        pass  # offline, rate-limited, or no releases published yet - just skip silently
+
+    _update_check_cache["checked_at"] = now
+    _update_check_cache["result"]     = result
+    return JSONResponse(result)
 
 
 # ---------------------------------------------------------------------------

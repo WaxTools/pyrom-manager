@@ -8,6 +8,17 @@
         * { box-sizing: border-box; }
         body { font-size: 0.9em; font-family: sans-serif; margin: 0; background: #f4f4f4; }
 
+        /* ---- update banner ---- */
+        #update-banner {
+            display: none; align-items: center; justify-content: center; gap: 14px;
+            background: #2a5934; color: #eaffef; padding: 8px 16px; font-size: 0.88em;
+        }
+        #update-banner a { color: #bfffce; font-weight: bold; text-decoration: underline; }
+        #update-banner button {
+            background: transparent; border: 1px solid #eaffef; color: #eaffef;
+            border-radius: 3px; padding: 2px 8px; cursor: pointer; font-size: 0.85em;
+        }
+
         /* ---- tab nav ---- */
         #tabnav { display: flex; background: #223; gap: 2px; padding: 6px 8px 0; flex-wrap: wrap; }
         .tab-btn {
@@ -3811,7 +3822,36 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('md5_fileexcl').value = ROM_FILE_EXCL_DEFAULT.split(',').join(', ');
     const savedTab = localStorage.getItem('romtools_active_tab') || 'home';
     showTab(savedTab);
+    checkForUpdate();
 });
+
+/* ================================================================
+   UPDATE CHECK
+   ================================================================ */
+function dismissUpdateBanner() {
+    const banner = document.getElementById('update-banner');
+    const latest = banner.dataset.latest || '';
+    if (latest) localStorage.setItem('romtools_update_dismissed', latest);
+    banner.style.display = 'none';
+}
+
+async function checkForUpdate() {
+    try {
+        const res  = await fetch('/api/update-check');
+        const data = await res.json();
+        if (!data.checked || !data.update_available) return;
+        if (localStorage.getItem('romtools_update_dismissed') === data.latest) return;
+
+        const banner = document.getElementById('update-banner');
+        banner.dataset.latest = data.latest;
+        document.getElementById('update-banner-text').textContent =
+            `A new version is available: ${data.latest} (you're on ${data.current})`;
+        document.getElementById('update-banner-link').href = data.release_url;
+        banner.style.display = 'flex';
+    } catch (e) {
+        // Offline, GitHub unreachable, etc. - silently skip, never block the app on this.
+    }
+}
 
 /* ================================================================
    COLLECTION COMPARE
@@ -4162,6 +4202,13 @@ function compareDelete(i, side, btn) {
             <button id="vr-modal-export-btn" onclick="vrExportMissingModalCsv()">⬇ Export CSV</button>
         </div>
     </div>
+</div>
+
+<!-- Update available banner -->
+<div id="update-banner">
+    <span id="update-banner-text"></span>
+    <a id="update-banner-link" href="#" target="_blank" rel="noopener">View release &amp; update instructions</a>
+    <button onclick="dismissUpdateBanner()">Dismiss</button>
 </div>
 
 <!-- Tab nav -->

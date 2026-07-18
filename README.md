@@ -24,6 +24,7 @@ A self-hosted, browser-based toolkit for organizing, verifying, and cleaning up 
 - [Installation](#installation)
 - [Running the App](#running-the-app)
 - [Configuration](#configuration)
+- [Updating](#updating)
 - [User Guide](#user-guide)
 - [Project Structure](#project-structure)
 - [Troubleshooting](#troubleshooting)
@@ -124,6 +125,10 @@ If it's missing, the app simply treats settings as unset — nothing breaks.
 
 A local SQLite cache (`cache/cache.db`) is also created automatically on first use to speed up repeat hash/verify scans. It's safe to delete at any time via **Utilities → Clear Cache**, or by removing the `cache/` folder — it will be rebuilt on next use.
 
+## Updating
+
+The app checks GitHub in the background and shows a banner inside the UI when a newer version is available — it does **not** update itself automatically (deliberately: an app that already modifies/deletes files on request shouldn't also silently rewrite its own code). See **[docs/UPDATING.md](docs/UPDATING.md)** for step-by-step update instructions for both the `git clone` and "Download ZIP" install methods. Your `config.json`, cache, DAT files, and `chdman.exe` are never touched by an update.
+
 ## User Guide
 
 ### ROM File List (MD5/hash scan)
@@ -158,9 +163,11 @@ pyrom-manager/
 │   └── base.html        # Single-page UI (tabs, JS, styles)
 ├── docs/
 │   ├── INSTALL_WINDOWS.md      # Detailed step-by-step Windows install guide
-│   └── INSTALL_MACOS_LINUX.md  # Detailed step-by-step macOS/Linux install guide
+│   ├── INSTALL_MACOS_LINUX.md  # Detailed step-by-step macOS/Linux install guide
+│   └── UPDATING.md             # How to update to a new release
 ├── requirements.txt      # Python dependencies
 ├── run.bat               # Windows launcher
+├── VERSION               # Current app version, checked against GitHub releases
 ├── CHANGELOG.md          # Release history
 ├── config.json           # Local settings (gitignored, created automatically)
 ├── cache/                # SQLite hash/verify cache (gitignored, created automatically)
