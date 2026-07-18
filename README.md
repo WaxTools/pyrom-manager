@@ -4,6 +4,10 @@ A self-hosted, browser-based toolkit for organizing, verifying, and cleaning up 
 
 > **⚠️ This app modifies, renames, and deletes files on disk.** Read the [Disclaimer](#-disclaimer) before you point it at anything you can't afford to lose.
 
+> **🧪 Tested environments:** this app has only been validated on **RetroBat (Windows)** and **Recalbox (Raspberry Pi)**. It may well work on other EmulationStation-based setups (Batocera, standalone ES, etc.) since they share similar `gamelist.xml`/folder conventions, but that's untested — proceed with extra caution (and backups!) on anything else, and please [let us know](#-contributing--feedback) how it goes either way.
+
+> **🤝 Contributions and feedback wanted!** This is an actively-used personal project shared in the hope it's useful to others too. Bug reports, feature requests, pull requests, and "hey, this worked/didn't work on my setup" reports are all genuinely welcome — see [Contributing & Feedback](#-contributing--feedback) below. Don't be shy about opening an issue.
+
 ---
 
 ## Table of Contents
@@ -17,6 +21,7 @@ A self-hosted, browser-based toolkit for organizing, verifying, and cleaning up 
 - [User Guide](#user-guide)
 - [Project Structure](#project-structure)
 - [Troubleshooting](#troubleshooting)
+- [Contributing & Feedback](#-contributing--feedback)
 - [Disclaimer](#-disclaimer)
 - [License](#license)
 
@@ -163,6 +168,19 @@ pyrom-manager/
 - **Scan seems stuck** — very large collections (tens of thousands of files) can take a while on first scan; subsequent scans of the same folder are much faster thanks to the cache. Check the browser console / terminal running the app for errors.
 - **Cache acting up / stale results** — clear it from Utilities → Clear Cache, or delete the `cache/` folder while the app is stopped.
 - **Network share paths** — UNC paths (`\\server\share\...` or `//server/share/...`) are supported in the path fields.
+
+## 🤝 Contributing & Feedback
+
+This app has only been tested against **RetroBat (Windows)** and **Recalbox (Raspberry Pi)** setups so far. If you run it against a different frontend/OS combo (Batocera, standalone EmulationStation, ES-DE, etc.), a different system's ROM set, or just hit something weird — **please open an issue and let us know**, whether it worked great or broke horribly. Both are useful.
+
+Ways to help make this a better app:
+
+- 🐛 **Found a bug?** [Open an issue](../../issues/new?template=bug_report.md) with what you did and what happened.
+- 💡 **Have an idea?** [Open a feature request](../../issues/new?template=feature_request.md).
+- ✅ **It worked for you?** Even a quick issue or discussion post saying "tested on X, works fine" genuinely helps others trust the tool on their own setup.
+- 🔧 **Want to fix/build something yourself?** See [CONTRIBUTING.md](CONTRIBUTING.md) for how to submit a pull request.
+
+No feedback is too small — this project gets better the more real-world setups it's tried against.
 
 ## ⚠️ Disclaimer
 
