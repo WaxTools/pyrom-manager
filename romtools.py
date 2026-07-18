@@ -2842,6 +2842,14 @@ async def gamemanager_build(
                         continue
                     row[field] = gl_row.get(field, "")
 
+                # RetroBat's scraper has no <adult> tag at all (that's a
+                # Recalbox-only field) - it flags mature content via
+                # <genre>Adults</genre> instead. Without this, the Adult
+                # column is silently empty for every RetroBat game even
+                # when the scraper *did* mark it as mature.
+                if not row["adult"] and row["genre"].strip().lower() in ("adult", "adults"):
+                    row["adult"] = "true"
+
                 yield sse_event(row)
 
                 done += 1
