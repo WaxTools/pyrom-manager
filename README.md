@@ -53,6 +53,12 @@ Python dependencies (installed via `requirements.txt`):
 
 ## Installation
 
+> **New to the command line, Python, or virtual environments?** Use the detailed step-by-step guide for your OS instead — it explains every step in plain English, with troubleshooting for common errors:
+> - 🪟 **[Detailed Windows install guide](docs/INSTALL_WINDOWS.md)**
+> - 🍎🐧 **[Detailed macOS/Linux install guide](docs/INSTALL_MACOS_LINUX.md)**
+
+The short version, if you're already comfortable with a terminal:
+
 ```bash
 # 1. Clone the repo
 git clone https://github.com/wtaulu/pyrom-manager.git
@@ -139,6 +145,9 @@ pyrom-manager/
 ├── romtools.py          # FastAPI app: all routes, scanning/hashing/DAT logic
 ├── templates/
 │   └── base.html        # Single-page UI (tabs, JS, styles)
+├── docs/
+│   ├── INSTALL_WINDOWS.md      # Detailed step-by-step Windows install guide
+│   └── INSTALL_MACOS_LINUX.md  # Detailed step-by-step macOS/Linux install guide
 ├── requirements.txt      # Python dependencies
 ├── run.bat               # Windows launcher
 ├── CHANGELOG.md          # Release history
