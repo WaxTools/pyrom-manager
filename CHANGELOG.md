@@ -11,6 +11,8 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ### Fixed
 - Game Manager's "Adult" column was always empty for RetroBat collections, since RetroBat's scraper has no `<adult>` gamelist tag at all (it's Recalbox-only) — it flags mature content via `<genre>Adults</genre>` instead. The Adult column now also picks that up.
+- Game Manager's "Delete Selected ROMs" button got stuck on "Deleting…" after a successful delete (it only reset on failure), forcing a page refresh before the next delete.
+- Fixed type errors in the DAT folder scan where `os.scandir()` entries were passed directly to functions expecting a `Path`.
 
 ## [1.0.0] - 2026-07-18
 

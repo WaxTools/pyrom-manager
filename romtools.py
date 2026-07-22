@@ -1670,7 +1670,7 @@ def _build_scan_overview(rompath: str, datroot: str, folder_excl: list[str]) -> 
             continue
 
         # Count ROMs
-        rom_files = list_rom_candidate_files(item)
+        rom_files = list_rom_candidate_files(Path(item.path))
 
         # If not in saved mapping, apply auto-match and save it
         if item.name not in mapping and item.name in auto_matched:
@@ -1868,7 +1868,7 @@ def _build_folder_scan(root: Path) -> list[dict]:
     for item in top_entries:
         if not item.is_dir() or item.name in (FOLDER_EXCL_BASE + FOLDER_EXCL_EXTRA):
             continue
-        rom_count, total_size = _count_rom_files_with_size(item)
+        rom_count, total_size = _count_rom_files_with_size(Path(item.path))
         folders.append({
             "folder":     item.name,
             "rom_count":  rom_count,

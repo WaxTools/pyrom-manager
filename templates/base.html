@@ -3631,6 +3631,8 @@ function gmConfirmDelete(btn) {
         })
         .catch(e => {
             statusEl.innerHTML = `<span class="err">Failed: ${e}</span>`;
+        })
+        .finally(() => {
             btn.disabled = false;
             btn.textContent = '🗑 Delete Selected ROMs';
         });
